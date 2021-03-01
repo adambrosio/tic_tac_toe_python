@@ -84,3 +84,9 @@ def player_choice(board):
         position = int('Choose a position (1-9): ')
 
     return position
+
+'''
+REPLAY FUNC
+'''
+def replay():
+    input("Play again? Enter 'Yes' or 'No': ").lower.startswith('y')
