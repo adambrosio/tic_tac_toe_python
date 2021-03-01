@@ -89,4 +89,17 @@ def player_choice(board):
 REPLAY FUNC
 '''
 def replay():
-    input("Play again? Enter 'Yes' or 'No': ").lower.startswith('y')
+    
+    choice = 'lorem'
+
+    while choice.upper() not in ['Y', 'N']:
+        
+        choice = input("Would you like to play again? Enter 'Y' or 'N': ")
+
+        if choice.upper() not in ['Y', 'N']:
+            print("Sorry! Invalid input. Try again!")
+
+    if choice.upper() == 'Y':
+        return True
+    else:
+        return False
