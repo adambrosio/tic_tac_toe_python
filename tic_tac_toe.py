@@ -12,6 +12,7 @@ def display_board(board):
 def player_input():
 
     '''
+    TUPLE UNPACKING
     OUTPUT = (Player 1 Marker, Player 2 Marker)
     '''
 
