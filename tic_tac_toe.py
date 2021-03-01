@@ -47,7 +47,6 @@ def win_check(board, mark):
 '''
 ESSENTIALLY A COINFLIP
 '''
-
 import random
 
 def choose_first():
