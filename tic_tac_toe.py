@@ -19,8 +19,14 @@ def player_input():
     marker = ''
 
     while marker != 'X' and marker != 'O':
-        marker = input('Player 1: Choose X or O').upper()
+        marker = input('Player 1: Choose X or O: ').upper()
     if marker == 'X':
         return ('X', 'O')
     else:
         return ('O', 'X')
+
+'''
+TAKES IN BOARD LIST OBJECT, THE MARKER ('X OR 'O), AND THE DESIRED POISITION (1-9)
+'''
+def place_marker(board, marker, position):
+    board[position] = marker
