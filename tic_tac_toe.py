@@ -42,4 +42,19 @@ def win_check(board, mark):
     (board[3] == mark and board[5] == mark and board[7] == mark) or
     (board[2] == mark and board[5] == mark and board[8] == mark) or
     (board[1] == mark and board[4] == mark and board[7] == mark) or
-    (board[3] == mark and board[6] == mark and board[9] == mark))  
+    (board[3] == mark and board[6] == mark and board[9] == mark))
+
+'''
+ESSENTIALLY A COINFLIP
+'''
+
+import random
+
+def choose_first():
+
+    flip = random.randint(0, 1)
+
+    if flip == 0:
+        return 'Player 1'
+    else:
+        return 'Player 2'
