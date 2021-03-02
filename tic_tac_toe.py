@@ -106,3 +106,69 @@ def replay():
         return True
     else:
         return False
+
+# WHILE LOOP TO KEEP RUNNING GAME
+print('Welcome to Tic Tac Toe!')
+
+while True:
+
+    # PLAY THE GAME
+    # SET UP
+    game_board = [' ']*10
+    player1_marker, player2_marker = player_input()
+    turn = choose_first()
+    print(turn + ' will  go first.')
+
+    play_game = input("Ready to play? Enter 'Y' or 'N'? ")
+
+    if play_game.upper() == 'Y':
+        game_on = True
+    else:
+        game_on = False
+    ## GAME PLAY
+    ##PLAYER 1 TURN
+
+    while game_on:
+        if turn == 'Player 1':
+            # SHOW BOARD
+            display_board(game_board)
+            # CHOOSE POISITION
+            position = player_choice(game_board)
+            # PLACE MARKER
+            place_marker(game_board, player1_marker, position)
+            # CHECK WIN
+            if win_check(game_board, player1_marker):
+                display_board(game_board)
+                print('Player 1 has won!')
+                game_on = False
+            # CHECK TIE
+            else:
+                if full_board_check(game_board):
+                    display_board(game_board)
+                    print('Tie game!')
+                    game_on = False
+                else:
+                    turn = 'Player 2'
+        else:
+            # SHOW BOARD
+            display_board(game_board)
+            # CHOOSE POISITION
+            position = player_choice(game_board)
+            # PLACE MARKER
+            place_marker(game_board, player2_marker, position)
+            # CHECK WIN
+            if win_check(game_board, player2_marker):
+                display_board(game_board)
+                print('Player 2 has won!')
+                game_on = False
+            # CHECK TIE
+            else:
+                if full_board_check(game_board):
+                    display_board(game_board)
+                    print('Tie game!')
+                    game_on = False
+                else:
+                    turn = 'Player 1'
+
+    if not replay():
+        break
