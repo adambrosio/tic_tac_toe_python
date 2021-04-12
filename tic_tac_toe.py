@@ -26,15 +26,13 @@ def player_input():
     else:
         return ('O', 'X')
 
-'''
-TAKES IN BOARD LIST OBJECT, THE MARKER ('X OR 'O'), AND THE DESIRED POISITION (1-9)
-'''
+
+# TAKES IN BOARD LIST OBJECT, THE MARKER ('X OR 'O'), AND THE DESIRED POISITION (1-9)
 def place_marker(board, marker, position):
     board[position] = marker
 
-'''
-CHECKS FOR WINNER USING INDEXING
-'''
+
+# CHECKS FOR WINNER USING INDEXING
 def win_check(board, mark):
     return ((board[1] == mark and board[2] == mark and board[3]) == mark or
     (board[4] == mark and board[5] == mark and board[6] == mark) or 
@@ -45,13 +43,11 @@ def win_check(board, mark):
     (board[1] == mark and board[4] == mark and board[7] == mark) or
     (board[3] == mark and board[6] == mark and board[9] == mark))
 
-'''
-ESSENTIALLY A COINFLIP
-'''
+
+# ESSENTIALLY A COINFLIP
 import random
 
 def choose_first():
-
     flip = random.randint(0, 1)
 
     if flip == 0:
@@ -59,26 +55,20 @@ def choose_first():
     else:
         return 'Player 2'
 
-'''
-CHECKS IF SPACE IS AVAILABLE
-'''
+# CHECKS IF SPACE IS AVAILABLE
 def space_check(board, position):
     return board[position] == ' '
 
-'''
-FULL BOARD CHECK
-'''
+# FULL BOARD CHECK
 def full_board_check(board):
     for i in range(1, 10):
         if space_check(board, i):
             return False
     return True
 
-'''
-USES space_check() TO CHECK USER INPUT AGAINST THE BOARD
-'''
-def player_choice(board):
 
+# USES space_check() TO CHECK USER INPUT AGAINST THE BOARD
+def player_choice(board):
     position = 0
 
     while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board, position):
@@ -86,11 +76,8 @@ def player_choice(board):
 
     return position
 
-'''
-REPLAY FUNC
-'''
+# REPLAY FUNC
 def replay():
-    
     choice = 'lorem'
 
     while choice.upper() not in ['Y', 'N']:
@@ -123,8 +110,8 @@ while True:
         game_on = True
     else:
         game_on = False
-    ## GAME PLAY
-    ##PLAYER 1 TURN
+    # GAME PLAY
+    # PLAYER 1 TURN
 
     while game_on:
         if turn == 'Player 1':
