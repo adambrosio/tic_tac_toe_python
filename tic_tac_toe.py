@@ -87,9 +87,9 @@ def replay():
     else:
         return False
 
-# WHILE LOOP TO KEEP RUNNING GAME
+# START OF GAME
 print('Welcome to Tic Tac Toe!')
-
+# WHILE LOOP TO KEEP RUNNING GAME
 while True:
 
     # PLAY THE GAME
