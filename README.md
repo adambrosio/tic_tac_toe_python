@@ -1,2 +1,2 @@
 # tic_tac_toe_python
-# MY FIRST PYTHON PROJECT. BASIC TIC TAC TOE.
+# My first Python project. Basic 2 player tic tac toe game.
