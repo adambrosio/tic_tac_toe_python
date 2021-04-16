@@ -1,4 +1,5 @@
 def display_board(board):
+
     print(board[1] + '|' + board[2] + '|' + board[3])
     print('-----')
     print(board[4] + '|' + board[5] + '|' + board[6])
@@ -43,6 +44,7 @@ def win_check(board, mark):
 import random
 
 def choose_first():
+
     flip = random.randint(0, 1)
 
     if flip == 0:
@@ -64,6 +66,7 @@ def full_board_check(board):
 
 # USES space_check() TO CHECK USER INPUT AGAINST THE BOARD
 def player_choice(board):
+
     position = 0
 
     while position not in [1,2,3,4,5,6,7,8,9] or not space_check(board, position):
@@ -71,8 +74,10 @@ def player_choice(board):
 
     return position
 
-# REPLAY FUNC
+
+# REPLAY FUNCTION
 def replay():
+    
     choice = 'lorem'
 
     while choice.upper() not in ['Y', 'N']:
@@ -87,9 +92,9 @@ def replay():
     else:
         return False
 
-# START OF GAME
-print('Welcome to Tic Tac Toe!')
 # WHILE LOOP TO KEEP RUNNING GAME
+print('Welcome to Tic Tac Toe!')
+
 while True:
 
     # PLAY THE GAME
